@@ -32,7 +32,10 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
   ],
+
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -43,9 +46,10 @@ export default {
   axios: {
     baseURL: process.env.endpoint,
   },
-  // env: {
-  //   endpoint: process.env.endpoint,
-  // },
+
+  env: {
+    endpoint: process.env.ENDPOINT,
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
