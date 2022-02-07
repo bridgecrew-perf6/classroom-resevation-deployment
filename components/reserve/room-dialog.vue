@@ -80,6 +80,7 @@
                   v-model="date"
                   ref="picker"
                   :min="dayjs().add(1, 'day').toISOString().substr(0, 10)"
+                  @input="menu = false"
                 ></v-date-picker>
               </v-menu>
             </v-col>
@@ -166,6 +167,7 @@ export default {
     },
   },
   data: () => ({
+    menu: false,
     valid: true,
     show: false,
     showCon: false,

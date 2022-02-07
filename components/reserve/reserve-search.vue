@@ -12,12 +12,13 @@
         ></v-text-field>
       </v-col>
 
-      <v-col align-self="center"
+      <v-col align-self="center" 
         ><v-menu
           ref="menu"
           :close-on-content-click="false"
           transition="scale-transition"
           offset-y
+          v-model="menu"
         >
           <template #activator="{ on, attrs }">
             <v-text-field
@@ -36,6 +37,7 @@
             ref="picker"
             v-model="searchData.date"
             :min="dayjs().add(1, 'day').toISOString().substr(0, 10)"
+            @input="setDate"
           ></v-date-picker>
         </v-menu>
       </v-col>
@@ -114,6 +116,7 @@ export default {
       { text: 'Lecture', value: 0 },
       { text: 'Laboratory', value: 1 },
     ],
+    menu: false,
   }),
   computed: {
     items() {
@@ -124,6 +127,10 @@ export default {
     },
   },
   methods: {
+    setDate(){
+      this.menu = false
+      this.$emit("setDate", this.searchData.date)
+    },
     clear() {
       this.searchData = {
         date: null,

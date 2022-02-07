@@ -21,7 +21,8 @@ export default {
   methods: {
     isFinished() {
       const now = new Date()
-      return this.date < now
+      this.$emit("finish", new Date(this.date) < now)
+      return new Date(this.date) < now
     },
   },
 }

@@ -30,7 +30,7 @@
           </v-chip>
         </v-col>
         <v-col cols="3" align-self="center">
-          <ReserveStatus :date="item.date" :status="item.cancelled" />
+          <ReserveStatus :date="item.date" :status="item.cancelled" @finish="finish"/>
         </v-col>
       </v-row>
     </v-col>
@@ -41,7 +41,7 @@
         outlined
         large
         color="error"
-        :disabled="item.cancelled"
+        :disabled="item.cancelled || finished" 
       >
         Cancel
       </v-btn>
@@ -57,9 +57,15 @@ export default {
   props: {
     item: Object,
   },
+  data: () => ({
+    finished: false,
+  }),
+
 
   methods: {
-    dayjs,
+    finish(value){
+      this.finished = value
+    },dayjs,
   },
 }
 </script>

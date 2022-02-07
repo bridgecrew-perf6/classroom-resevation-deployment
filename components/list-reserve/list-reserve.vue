@@ -45,8 +45,8 @@
           </template>
           <v-date-picker
             ref="picker"
-            :max="new Date().toISOString().substr(0, 10)"
-            min="1950-01-01"
+            v-model="searchReserve.date"
+            @input="menu = false"
           ></v-date-picker>
         </v-menu>
       </v-col>
@@ -95,6 +95,7 @@
 <script>
 export default {
   data: () => ({
+    menu : false,
     time: [
       { text: '08.00 - 09.30', value: { start: '8.00', end: '9.30' } },
       { text: '09.30 - 11.00', value: { start: '9.30', end: '11.00' } },
