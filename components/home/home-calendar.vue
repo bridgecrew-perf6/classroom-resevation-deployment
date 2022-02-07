@@ -11,7 +11,7 @@
         </div>
       </div>
     </v-col>
-    <v-col class="mt-16" cols="12" align-self= "end">
+    <v-col class="mt-4" cols="12" align-self= "end">
       <v-date-picker
         v-model="picker"
         dark

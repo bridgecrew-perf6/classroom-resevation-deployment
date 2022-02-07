@@ -8,6 +8,11 @@
         <home-kinesis />
       </v-col>
     </v-row>
+    <v-row class="meethip">
+      <v-col class = "mt-10" cols="3" align-self="center" >
+        <meethip-kinesis />
+      </v-col>
+    </v-row>
     <v-row class="contact">
       <v-col>
         <home-contact />
@@ -17,17 +22,23 @@
 </template>
 
 <script>
-export default {}
+import meethipKinesis from '~/components/kinesis/meethip-kinesis.vue'
+export default {
+  components: { meethipKinesis },
+}
 </script>
 
 <style lang="scss" scoped>
+.meethip {
+  height: 35%;
+}
 .idx {
   height: 100%;
 }
 .contact {
-  height: 30%;
+  height: 10%;
 }
 .welcome {
-  height: 70%;
+  height: 50%;
 }
 </style>

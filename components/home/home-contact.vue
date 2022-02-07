@@ -36,7 +36,7 @@ th {
   margin: auto;
 }
 .card{
-  margin-top: 90px;
-  height: 75%;
+  
+  height: 100%;
 }
 </style>
