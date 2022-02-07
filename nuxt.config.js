@@ -45,7 +45,7 @@ export default {
     '@nuxtjs/axios',
   ],
   axios: {
-    baseURL: process.env.endpoint,
+    baseURL: "https://classroom-reservation.azurewebsites.net/",
   },
 
   env: {
