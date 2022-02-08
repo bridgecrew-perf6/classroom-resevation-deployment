@@ -12,7 +12,7 @@
         ></v-text-field>
       </v-col>
 
-      <v-col align-self="center" 
+      <v-col align-self="center"
         ><v-menu
           ref="menu"
           :close-on-content-click="false"
@@ -113,8 +113,8 @@ export default {
       type: null,
     },
     type: [
-      { text: 'Lecture', value: 0 },
-      { text: 'Laboratory', value: 1 },
+      { text: 'Lecture', value: 1 },
+      { text: 'Laboratory', value: 2 },
     ],
     menu: false,
   }),
@@ -127,9 +127,9 @@ export default {
     },
   },
   methods: {
-    setDate(){
+    setDate() {
       this.menu = false
-      this.$emit("setDate", this.searchData.date)
+      this.$emit('setDate', this.searchData.date)
     },
     clear() {
       this.searchData = {

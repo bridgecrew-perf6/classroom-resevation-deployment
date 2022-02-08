@@ -11,7 +11,13 @@
           indeterminate
         ></v-progress-circular>
       </div>
-      <v-list v-else class="vscroll pt-0" max-height="650" max-width="100%" ripple flat
+      <v-list
+        v-else
+        class="vscroll pt-0"
+        max-height="650"
+        max-width="100%"
+        ripple
+        flat
         ><v-list-item-group>
           <v-list-item
             v-for="(r, index) in rooms"
@@ -69,7 +75,7 @@ export default {
   },
 
   methods: {
-    setDate(value){
+    setDate(value) {
       this.date = value
     },
     async clear() {
@@ -107,6 +113,7 @@ export default {
         end: value.time == '' || value.time == null ? null : value.time?.end,
         type: value.type == '' || value.type == null ? null : value.type,
       }
+      console.log(data)
 
       this.rooms = await this.$axios.$get(
         `/rooms/search/${data.number}/${data.date}/${data.start}/${data.end}/${data.type}`
