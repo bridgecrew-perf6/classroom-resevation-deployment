@@ -161,8 +161,8 @@ export default {
   computed: {
     conRules() {
       return [
-        (v) => !!v || 'Confirm password is required!',
-        (v) => v === this.password || 'The passwords do not match. try again!',
+        (v) => !!v || 'Cancellation code is required!',
+        (v) => v === this.password || 'Cancellation code do not match. try again!',
       ]
     },
   },
@@ -203,9 +203,9 @@ export default {
     timeRules: [(v) => (v && v.length >= 1) || 'Time is required!'],
     passwordRules: [
       (v) => !!v || 'Password is required!',
-      (v) => (v && v.length >= 8) || 'Last name must be more than 8 characters',
+      (v) => (v && v.length >= 8) || 'Cancellation code must be more than 8 characters',
       (v) =>
-        (v && v.length <= 16) || 'Last name must be less than 16 characters',
+        (v && v.length <= 16) || 'Cancellation code must be less than 16 characters',
     ],
   }),
   watch: {
