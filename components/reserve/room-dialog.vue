@@ -105,7 +105,7 @@
                 v-model="password"
                 :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="show ? 'text' : 'password'"
-                label="Password"
+                label="Cancellation code"
                 outlined
                 dense
                 @click:append="show = !show"
@@ -118,7 +118,7 @@
                 v-model="confirmPassword"
                 :append-icon="showCon ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showCon ? 'text' : 'password'"
-                label="Confirm Password"
+                label="Confirm Cancellation code"
                 outlined
                 dense
                 @click:append="showCon = !showCon"

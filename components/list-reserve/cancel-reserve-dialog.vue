@@ -3,10 +3,10 @@
     <v-card>
       <v-card-title> Confirm Cancelation </v-card-title>
       <v-text-field
-        :error = "error"
-        :error-messages = "errorMessage"
+        :error="error"
+        :error-messages="errorMessage"
         v-model="password"
-        label="Password"
+        label="Cancellation code"
         outlined
         dense
         class="pa-4"
@@ -17,9 +17,7 @@
       </v-text-field>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="error darken-1" text @click="close">
-          Close
-        </v-btn>
+        <v-btn color="error darken-1" text @click="close"> Close </v-btn>
         <v-btn
           color="primary darken-1"
           text
@@ -34,7 +32,7 @@
 
 <script>
 export default {
-  props: { 
+  props: {
     errorMessage: String,
     number: String,
     dialog: false,
@@ -46,11 +44,11 @@ export default {
     show: false,
   }),
   methods: {
-    close(){
+    close() {
       this.password = ''
       this.$emit('close', false)
-    }
-  }
+    },
+  },
 }
 </script>
 
