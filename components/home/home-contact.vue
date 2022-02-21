@@ -13,7 +13,7 @@
         </tr>
         <tr>
           <td>sutthiphan_pranan@cmu.ac.th</td>
-          <td>wachiranan_p@cmu.ac.th</th>
+          <td>wachiranan_p@cmu.ac.th</td>
           <td>thiradon_th@cmu.ac.th</td>
           <td>pichai_namwan@cmu.ac.th</td>
           <td>chattraphon_r@cmu.ac.th</td>
@@ -37,7 +37,6 @@ th {
   width: 17%;
 }
 .card{
-  
   height: 100%;
 }
 </style>
