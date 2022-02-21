@@ -50,7 +50,7 @@ export default {
   height: 80px;
 }
 .pic {
-  height: 200px;
+  height: 150px;
   position: absolute;
   background-size: contain;
   border-radius: 5px

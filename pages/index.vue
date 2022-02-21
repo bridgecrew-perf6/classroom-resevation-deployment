@@ -9,7 +9,7 @@
       </v-col>
     </v-row>
     <v-row class="meethip">
-      <v-col class = "mt-10" cols="3" align-self="center" >
+      <v-col class = "mt-8" cols="3" align-self="center" >
         <meethip-kinesis />
       </v-col>
     </v-row>
@@ -39,6 +39,6 @@ export default {
   height: 10%;
 }
 .welcome {
-  height: 50%;
+  height: 48%;
 }
 </style>
