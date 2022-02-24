@@ -21,7 +21,7 @@
         <v-btn
           color="primary darken-1"
           text
-          @click="$emit('confirm', password)"
+          @click="confirm"
         >
           Confirm
         </v-btn>
@@ -47,7 +47,13 @@ export default {
     close() {
       this.password = ''
       this.$emit('close', false)
+      this.show = false
     },
+    confirm(){
+      this.$emit('confirm', this.password)
+      this.password = ''
+      this.show = false
+    }
   },
 }
 </script>

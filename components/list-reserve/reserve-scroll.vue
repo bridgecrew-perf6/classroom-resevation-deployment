@@ -2,16 +2,11 @@
   <v-row>
     <v-col>
       <v-row>
-        <v-col align-self="center">
-          <div>
-            <span>
-              Name:
-            </span>
+        <v-col align-self="center" class="d-flex align-content-center">
+            Name:
             <span class="data d-inline-block font-weight-bold text-truncate">
               {{ item.name }}
             </span>
-          </div>
-          <!-- Name: <strong>{{ item.name }}</strong> -->
         </v-col>
         <v-col align-self="center">
           Room: <strong>{{ item.roomNumber }}</strong>
@@ -20,16 +15,11 @@
           Date:
           <strong>{{ dayjs(item.date).format('DD/MM/YYYY') }}</strong>
         </v-col>
-        <v-col align-self="center" >
-          <div>
-            <span>
-              Description:
-            </span>
-            <span class="data d-inline-block font-weight-bold text-truncate">
-              {{ item.description }}
-            </span>
-          </div>
-          <!-- Description:<strong class="des d-flex text-truncate">{{ item.description }}</strong> -->
+        <v-col align-self="center" class="d-flex align-content-center">
+          Description:
+          <span class="data d-inline-block font-weight-bold text-truncate">
+            {{ item.description }}
+          </span>
         </v-col>
       </v-row>
       <v-row>
@@ -92,8 +82,8 @@ export default {
 
 <style lang="scss" scoped>
 .data {
-
-  max-width: 200px;
-  
+  width: 200px;
+  min-width: 100px;
+  margin-left: 4px;
 }
 </style>

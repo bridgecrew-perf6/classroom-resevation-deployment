@@ -137,6 +137,8 @@ export default {
       this.dialog = false
       this.snackbar = true
       await this.getAllReserved()
+      this.error = false
+      this.errorMessage = ''
       
     },
   },
