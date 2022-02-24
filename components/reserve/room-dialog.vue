@@ -162,7 +162,8 @@ export default {
     conRules() {
       return [
         (v) => !!v || 'Cancellation code is required!',
-        (v) => v === this.password || 'Cancellation code do not match. try again!',
+        (v) =>
+          v === this.password || 'Cancellation code do not match. try again!',
       ]
     },
   },
@@ -203,9 +204,12 @@ export default {
     timeRules: [(v) => (v && v.length >= 1) || 'Time is required!'],
     passwordRules: [
       (v) => !!v || 'Password is required!',
-      (v) => (v && v.length >= 8) || 'Cancellation code must be more than 8 characters',
       (v) =>
-        (v && v.length <= 16) || 'Cancellation code must be less than 16 characters',
+        (v && v.length >= 8) ||
+        'Cancellation code must be more than 8 characters',
+      (v) =>
+        (v && v.length <= 16) ||
+        'Cancellation code must be less than 16 characters',
     ],
   }),
   watch: {
@@ -223,7 +227,7 @@ export default {
   methods: {
     confirm() {
       this.valid = this.$refs.form.validate()
-      console.log(this.valid)
+
       if (this.valid) {
         this.$emit('confirm', {
           roomId: this.focusRoomId,
@@ -235,15 +239,9 @@ export default {
           phone: this.phone,
           email: this.email,
         })
-        this.firstName = ''
-        this.lastName = ''
-        this.email = ''
-        this.phone = ''
-        this.password = ''
-        this.confirmPassword = ''
-        this.description = ''
-        this.selectedTime = []
-        this.$refs.form.reset()
+        setTimeout(() => {
+          this.$refs.form.reset()
+        }, 1000)
       }
     },
     reset() {

@@ -3,7 +3,15 @@
     <v-col>
       <v-row>
         <v-col align-self="center">
-          Name: <strong>{{ item.name }}</strong>
+          <div>
+            <span>
+              Name:
+            </span>
+            <span class="data d-inline-block font-weight-bold text-truncate">
+              {{ item.name }}
+            </span>
+          </div>
+          <!-- Name: <strong>{{ item.name }}</strong> -->
         </v-col>
         <v-col align-self="center">
           Room: <strong>{{ item.roomNumber }}</strong>
@@ -12,8 +20,16 @@
           Date:
           <strong>{{ dayjs(item.date).format('DD/MM/YYYY') }}</strong>
         </v-col>
-        <v-col align-self="center">
-          Description:<strong>{{ item.description }}</strong>
+        <v-col align-self="center" >
+          <div>
+            <span>
+              Description:
+            </span>
+            <span class="data d-inline-block font-weight-bold text-truncate">
+              {{ item.description }}
+            </span>
+          </div>
+          <!-- Description:<strong class="des d-flex text-truncate">{{ item.description }}</strong> -->
         </v-col>
       </v-row>
       <v-row>
@@ -30,7 +46,11 @@
           </v-chip>
         </v-col>
         <v-col cols="3" align-self="center">
-          <ReserveStatus :date="item.date" :status="item.cancelled" @finish="finish"/>
+          <ReserveStatus
+            :date="item.date"
+            :status="item.cancelled"
+            @finish="finish"
+          />
         </v-col>
       </v-row>
     </v-col>
@@ -41,7 +61,7 @@
         outlined
         large
         color="error"
-        :disabled="item.cancelled || finished" 
+        :disabled="item.cancelled || finished"
       >
         Cancel
       </v-btn>
@@ -61,13 +81,19 @@ export default {
     finished: false,
   }),
 
-
   methods: {
-    finish(value){
+    finish(value) {
       this.finished = value
-    },dayjs,
+    },
+    dayjs,
   },
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.data {
+
+  max-width: 200px;
+  
+}
+</style>

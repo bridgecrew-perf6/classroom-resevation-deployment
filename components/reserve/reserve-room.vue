@@ -87,6 +87,7 @@ export default {
       this.snackbar = true
       this.focusRoomId = ''
       this.date = null
+      return true
     },
 
     async createReserve(reaserveData) {
@@ -122,6 +123,8 @@ export default {
 
     close(value) {
       this.dialog = value
+      this.date = null
+      
     },
     setFocusData(id) {
       this.dialog = true
